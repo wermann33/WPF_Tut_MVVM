@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WPF_Tut9_MVVM.View.UserControls.ItemsTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Tut9_MVVM.View.UserControls"
+             xmlns:viewModels="clr-namespace:WPF_Tut9_MVVM.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewModels:ItemsTableViewModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="300">
+    <Grid>
+        <DataGrid CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="4*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Serial Nr" Binding="{Binding SerialNumber}" Width="4*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="4*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
